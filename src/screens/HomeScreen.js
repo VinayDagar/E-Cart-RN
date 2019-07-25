@@ -8,9 +8,15 @@ import {
   Image,
   ScrollView
 } from "react-native";
-import { Ionicons, MaterialIcons, AntDesign } from "@expo/vector-icons";
+import {
+  Ionicons,
+  MaterialIcons,
+  AntDesign,
+  FontAwesome
+} from "@expo/vector-icons";
 import { Header } from "react-native-elements";
-import Swiper from "react-native-swiper";
+
+import SeeMoreComponent from "../components/SeeMoreComponent";
 
 import Dress1 from "../../assets/dresses/dress1.jpg";
 import Dress2 from "../../assets/dresses/dress2.jpg";
@@ -32,7 +38,7 @@ export default class HomeScreen extends Component {
             backgroundColor: "#4169E1"
           }}
           leftComponent={{ icon: "menu", color: "#fff" }}
-          rightComponent={{ icon: "add_shopping_cart", color: "#fff" }}
+          rightComponent={{ icon: "shopping-cart", color: "#fff" }}
           centerComponent={{
             text: "Shop Home",
             style: { fontSize: 18, fontWeight: "bold", color: "#fff" }
@@ -107,24 +113,8 @@ export default class HomeScreen extends Component {
                 Related to items you've viewed
               </Text>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                flexWrap: "wrap",
-                justifyContent: "space-around",
-                borderBottomWidth: 1,
-                borderBottomColor: "#c1c1c1"
-              }}
-            >
-              <View
-                style={{
-                  backgroundColor: "#E2E2E2",
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4
-                }}
-              >
+            <View style={styles.imageRow}>
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/dresses/dress1.jpg")}
@@ -132,15 +122,7 @@ export default class HomeScreen extends Component {
                 <Text>Blue Dress</Text>
                 <Text>$ 25.4</Text>
               </View>
-              <View
-                style={{
-                  backgroundColor: "#E2E2E2",
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4
-                }}
-              >
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/dresses/dress2.jpg")}
@@ -148,15 +130,7 @@ export default class HomeScreen extends Component {
                 <Text>Red Dress</Text>
                 <Text>$ 20.4</Text>
               </View>
-              <View
-                style={{
-                  backgroundColor: "#E2E2E2",
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4
-                }}
-              >
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/blazzers/blazzer1.jpg")}
@@ -164,15 +138,7 @@ export default class HomeScreen extends Component {
                 <Text>Mens casoule Blazzer</Text>
                 <Text>$ 125.44</Text>
               </View>
-              <View
-                style={{
-                  backgroundColor: "#E2E2E2",
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4
-                }}
-              >
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/blazzers/blazzer2.jpg")}
@@ -183,21 +149,76 @@ export default class HomeScreen extends Component {
             </View>
             <View
               style={{
-                flexDirection: "row",
                 marginVertical: 8,
-                justifyContent: "space-between",
                 width: width - 10
               }}
             >
-              <Text style={{ fontSize: 16, color: "lightblue" }}>See more</Text>
-              <AntDesign name="right" size={16} color="lightblue" />
+              <SeeMoreComponent message="See More" />
             </View>
           </View>
           <View style={styles.productImageContainer}>
             <View>
               <Text
                 style={{
-                  fontSize: 18,
+                  fontSize: 17,
+                  alignItems: "center",
+                  marginVertical: 5,
+                  marginLeft: 8
+                }}
+              >
+                Tips and trends from our bloggers
+              </Text>
+            </View>
+            <View style={styles.imageRow}>
+              <View style={styles.imageTextContainer}>
+                <Image
+                  style={styles.productImage}
+                  source={require("../../assets/handBags/handbag2.jpg")}
+                />
+                <Text style={{ fontSize: 12 }}>Top bags every one needs</Text>
+              </View>
+              <View style={styles.imageTextContainer}>
+                <Image
+                  style={styles.productImage}
+                  source={require("../../assets/cartens/carten1.jpg")}
+                />
+                <Text style={{ fontSize: 12 }}>
+                  Try this season's hottest trend
+                </Text>
+              </View>
+              <View style={styles.imageTextContainer}>
+                <Image
+                  style={styles.productImage}
+                  source={require("../../assets/kitchenAppliance/applience2.jpg")}
+                />
+                <Text style={{ fontSize: 12 }}>
+                  Must have for this moonsoon
+                </Text>
+              </View>
+              <View style={styles.imageTextContainer}>
+                <Image
+                  style={styles.productImage}
+                  source={require("../../assets/dresses/dress2.jpg")}
+                />
+                <Text style={{ fontSize: 12 }}>
+                  Perfect the art of styling prints
+                </Text>
+              </View>
+            </View>
+            <View
+              style={{
+                marginVertical: 8,
+                width: width - 10
+              }}
+            >
+              <SeeMoreComponent message="Read more on The Magazine" />
+            </View>
+          </View>
+          <View style={styles.productImageContainer}>
+            <View>
+              <Text
+                style={{
+                  fontSize: 17,
                   alignItems: "center",
                   marginVertical: 5,
                   marginLeft: 8
@@ -206,60 +227,52 @@ export default class HomeScreen extends Component {
                 Amazon Pantry Up to 50% off + Extra benefits
               </Text>
             </View>
-            <View
-              style={{
-                flexDirection: "row",
-                flexWrap: "wrap",
-                justifyContent: "space-around",
-                borderBottomWidth: 1,
-                borderBottomColor: "#c1c1c1",
-                alignItems: "center"
-              }}
-            >
-              <View
-                style={{
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4,
-                  alignContent: "center"
-                }}
-              >
+            <View style={styles.imageRow}>
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/dresses/dress2.jpg")}
                 />
-                <Text>Bestsellers from our top category</Text>
+                <Text style={{ fontSize: 12 }}>
+                  Bestsellers from our top category
+                </Text>
               </View>
-              <View
-                style={{
-                  alignItems: "center",
-                  width: width / 2 - 2,
-                  paddingHorizontal: 4,
-                  marginBottom: 4
-                }}
-              >
+              <View style={styles.imageTextContainer}>
                 <Image
                   style={styles.productImage}
                   source={require("../../assets/blazzers/blazzer1.jpg")}
                 />
-                <Text>Save more with coupons</Text>
+                <Text style={{ fontSize: 15 }}>Save more with coupons</Text>
               </View>
             </View>
 
             <View
               style={{
-                flexDirection: "row",
                 marginVertical: 8,
-                justifyContent: "space-between",
                 width: width - 10
               }}
             >
-              <Text style={{ fontSize: 16, color: "lightblue" }}>See more</Text>
-              <AntDesign name="right" size={16} color="lightblue" />
+              <SeeMoreComponent message="See More" />
             </View>
           </View>
-          <View style={{ flex: 1, height: 150 }} />
+          <View style={styles.productImageContainer}>
+            <Text style={{ fontSize: 20 }}>Your Highlights</Text>
+            <View style={styles.imageRow}>
+              <View style={{ backgroundColor: "orange" }}>
+                <Ionicons name="md-person" size={50} color="#fff" />
+              </View>
+              <View style={{ backgroundColor: "orange" }}>
+                <FontAwesome name="cc-paypal" size={50} color="#fff" />
+              </View>
+              <View style={{ backgroundColor: "orange" }}>
+                <AntDesign name="hearto" size={50} color="pink" />
+              </View>
+              <View style={{ backgroundColor: "orange" }}>
+                <FontAwesome name="odnoklassniki" size={50} color="#fff" />
+              </View>
+            </View>
+          </View>
+          <View style={{ flex: 1, height: 100 }} />
         </ScrollView>
       </View>
     );
@@ -290,5 +303,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#9DD6EB"
+  },
+  imageRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    borderBottomWidth: 1,
+    borderBottomColor: "#c1c1c1",
+    alignItems: "center"
+  },
+  imageTextContainer: {
+    backgroundColor: "#E2E2E2",
+    alignItems: "center",
+    width: width / 2 - 2,
+    paddingHorizontal: 4,
+    marginBottom: 4
   }
 });
