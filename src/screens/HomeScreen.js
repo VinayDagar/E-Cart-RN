@@ -255,20 +255,73 @@ export default class HomeScreen extends Component {
               <SeeMoreComponent message="See More" />
             </View>
           </View>
+
           <View style={styles.productImageContainer}>
             <Text style={{ fontSize: 20 }}>Your Highlights</Text>
-            <View style={styles.imageRow}>
-              <View style={{ backgroundColor: "orange" }}>
-                <Ionicons name="md-person" size={50} color="#fff" />
+            <View style={styles.iconRow}>
+              <View
+                style={{
+                  backgroundColor: "#FFDB99",
+                  borderColor: "orange",
+                  borderWidth: 2,
+                  height: 120,
+                  alignItems: "center",
+                  width: 80,
+                  justifyContent: "space-between",
+                  paddingTop: 10
+                }}
+              >
+                <View
+                  style={{
+                    backgroundColor: "#dcdcdc",
+                    width: 50,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderRadius: 50
+                  }}
+                >
+                  <Ionicons name="md-person" size={50} color="#fff" />
+                </View>
+                <Text>You</Text>
               </View>
-              <View style={{ backgroundColor: "orange" }}>
-                <FontAwesome name="cc-paypal" size={50} color="#fff" />
+              <View
+                style={{
+                  backgroundColor: "#DCDCDC",
+                  height: 120,
+                  alignItems: "center",
+                  width: 80,
+                  justifyContent: "space-between",
+                  paddingTop: 10
+                }}
+              >
+                <FontAwesome name="cc-paypal" size={70} color="#fff" />
+                <Text>Pay</Text>
               </View>
-              <View style={{ backgroundColor: "orange" }}>
-                <AntDesign name="hearto" size={50} color="pink" />
+              <View
+                style={{
+                  backgroundColor: "#DCDCDC",
+                  height: 120,
+                  alignItems: "center",
+                  width: 80,
+                  justifyContent: "space-between",
+                  paddingTop: 10
+                }}
+              >
+                <AntDesign name="hearto" size={70} color="pink" />
+                <Text>Favourite</Text>
               </View>
-              <View style={{ backgroundColor: "orange" }}>
-                <FontAwesome name="odnoklassniki" size={50} color="#fff" />
+              <View
+                style={{
+                  backgroundColor: "#DCDCDC",
+                  height: 120,
+                  alignItems: "center",
+                  width: 80,
+                  justifyContent: "space-between",
+                  paddingTop: 10
+                }}
+              >
+                <FontAwesome name="odnoklassniki" size={70} color="#fff" />
+                <Text>Spark</Text>
               </View>
             </View>
           </View>
@@ -308,6 +361,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-around",
+    borderBottomWidth: 1,
+    borderBottomColor: "#c1c1c1",
+    alignItems: "center"
+  },
+  iconRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
     borderBottomWidth: 1,
     borderBottomColor: "#c1c1c1",
     alignItems: "center"
