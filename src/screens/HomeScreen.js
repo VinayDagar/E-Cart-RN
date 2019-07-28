@@ -23,6 +23,8 @@ import Dress2 from "../../assets/dresses/dress2.jpg";
 import Blazzer1 from "../../assets/blazzers/blazzer1.jpg";
 import Blazzer2 from "../../assets/blazzers/blazzer3.jpg";
 import Mobile from "../../assets/mobiles/mobile1.jpg";
+import Wide1 from "../../assets/wide1.jpg";
+import Wide2 from "../../assets/wide2.jpg";
 import Laptop from "../../assets/laptops/laptop1.jpg";
 
 const { width } = Dimensions.get("window");
@@ -35,7 +37,7 @@ export default class HomeScreen extends Component {
         <Header
           placement="left"
           containerStyle={{
-            backgroundColor: "#4169E1"
+            backgroundColor: "#587795"
           }}
           leftComponent={{ icon: "menu", color: "#fff" }}
           rightComponent={{ icon: "shopping-cart", color: "#fff" }}
@@ -114,38 +116,78 @@ export default class HomeScreen extends Component {
               </Text>
             </View>
             <View style={styles.imageRow}>
-              <View style={styles.imageTextContainer}>
-                <Image
-                  style={styles.productImage}
-                  source={require("../../assets/dresses/dress1.jpg")}
-                />
-                <Text>Blue Dress</Text>
-                <Text>$ 25.4</Text>
-              </View>
-              <View style={styles.imageTextContainer}>
-                <Image
-                  style={styles.productImage}
-                  source={require("../../assets/dresses/dress2.jpg")}
-                />
-                <Text>Red Dress</Text>
-                <Text>$ 20.4</Text>
-              </View>
-              <View style={styles.imageTextContainer}>
-                <Image
-                  style={styles.productImage}
-                  source={require("../../assets/blazzers/blazzer1.jpg")}
-                />
-                <Text>Mens casoule Blazzer</Text>
-                <Text>$ 125.44</Text>
-              </View>
-              <View style={styles.imageTextContainer}>
-                <Image
-                  style={styles.productImage}
-                  source={require("../../assets/blazzers/blazzer2.jpg")}
-                />
-                <Text>Mens Slim fit Blazzer</Text>
-                <Text>$ 135.94</Text>
-              </View>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate("detailComponent", {
+                    image: Dress1,
+                    price: 25.4,
+                    title: 'Blue Dress'
+                  })
+                }
+              >
+                <View style={styles.imageTextContainer}>
+                  <Image
+                    style={styles.productImage}
+                    source={Dress1}
+                  />
+                  <Text>Blue Dress</Text>
+                  <Text>$ 25.4</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate("detailComponent",{
+                    image: Dress2,
+                    price: 20.4,
+                    title: 'Red Dress'
+                  })
+                }
+              >
+                <View style={styles.imageTextContainer}>
+                  <Image
+                    style={styles.productImage}
+                    source={Dress2}
+                  />
+                  <Text>Red Dress</Text>
+                  <Text>$ 20.4</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate("detailComponent",{
+                    image: Blazzer1,
+                    price: 125.44,
+                    title: 'Mens Blazzer'
+                  })
+                }
+              >
+                <View style={styles.imageTextContainer}>
+                  <Image
+                    style={styles.productImage}
+                    source={Blazzer1}
+                  />
+                  <Text>Mens casoule Blazzer</Text>
+                  <Text>$ 125.44</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate("detailComponent",{
+                    image: Blazzer2,
+                    price: 135.94,
+                    title: 'Slim Fit Blazzer'
+                  })
+                }
+              >
+                <View style={styles.imageTextContainer}>
+                  <Image
+                    style={styles.productImage}
+                    source={Blazzer2}
+                  />
+                  <Text>Mens Slim fit Blazzer</Text>
+                  <Text>$ 135.94</Text>
+                </View>
+              </TouchableOpacity>
             </View>
             <View
               style={{
