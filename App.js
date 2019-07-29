@@ -4,6 +4,7 @@ import { Ionicons, FontAwesome, AntDesign } from "@expo/vector-icons";
 
 import {
   createDrawerNavigator,
+  createStackNavigator,
   DrawerItems,
   createAppContainer
 } from "react-navigation";
@@ -11,6 +12,7 @@ import {
 import HomeScreen from "./src/screens/HomeScreen";
 import CategoryScreen from "./src/screens/CategoryScreen";
 import TopDealsComponent from "./src/screens/TopDealsComponent";
+import ViewDetailComponent from "./src/components/ViewDetailComponent";
 
 const CustomDrawerComponent = props => (
   <SafeAreaView style={{ flex: 1 }}>
@@ -248,7 +250,12 @@ const AppDrawer = createDrawerNavigator(
               }}
             >
               <Text> Settings </Text>
-              <AntDesign name="right" size={25} style={{right: 20}} color="#dcdcdc" />
+              <AntDesign
+                name="right"
+                size={25}
+                style={{ right: 20 }}
+                color="#dcdcdc"
+              />
             </View>
           </View>
         )
@@ -269,14 +276,16 @@ const AppDrawer = createDrawerNavigator(
     contentComponent: CustomDrawerComponent
   }
 );
-
-const AppContainer = createAppContainer(AppDrawer);
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+const stackNavigation = createStackNavigator(
+  {
+    home: AppDrawer,
+    detailComponent: ViewDetailComponent
+  },
+  {
+    defaultNavigationOptions: {
+      header: null
+    }
   }
-});
+);
+
+const AppContainer = createAppContainer(stackNavigation);
