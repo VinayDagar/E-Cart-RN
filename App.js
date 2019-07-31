@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+import { Text, View, SafeAreaView, ScrollView } from "react-native";
 import { Ionicons, FontAwesome, AntDesign } from "@expo/vector-icons";
 
 import {
@@ -11,8 +11,11 @@ import {
 
 import HomeScreen from "./src/screens/HomeScreen";
 import CategoryScreen from "./src/screens/CategoryScreen";
+import ScanComponent from "./src/components/ScanComponent";
 import TopDealsComponent from "./src/screens/TopDealsComponent";
 import ViewDetailComponent from "./src/components/ViewDetailComponent";
+import CartScreen from "./src/screens/CartScreen";
+import PayScreen from "./src/screens/PayScreen";
 
 const CustomDrawerComponent = props => (
   <SafeAreaView style={{ flex: 1 }}>
@@ -279,7 +282,10 @@ const AppDrawer = createDrawerNavigator(
 const stackNavigation = createStackNavigator(
   {
     home: AppDrawer,
-    detailComponent: ViewDetailComponent
+    detailComponent: ViewDetailComponent,
+    scan: ScanComponent,
+    cart: CartScreen,
+    send: PayScreen
   },
   {
     defaultNavigationOptions: {

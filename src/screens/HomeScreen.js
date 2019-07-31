@@ -40,7 +40,13 @@ export default class HomeScreen extends Component {
             backgroundColor: "#587795"
           }}
           leftComponent={{ icon: "menu", color: "#fff" }}
-          rightComponent={{ icon: "shopping-cart", color: "#fff" }}
+          rightComponent={
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("cart")}
+            >
+              <MaterialIcons name="shopping-cart" size={28} color="#fff" />
+            </TouchableOpacity>
+          }
           centerComponent={{
             text: "Shop Home",
             style: { fontSize: 18, fontWeight: "bold", color: "#fff" }
@@ -75,16 +81,24 @@ export default class HomeScreen extends Component {
               backgroundColor: "#fff"
             }}
           >
-            <View style={{ alignItems: "center", padding: 5 }}>
-              <Ionicons name="ios-send" color="orange" size={40} />
-              <Text style={{ fontSize: 12, fontWeight: "300" }}>
-                Send Money
-              </Text>
-            </View>
-            <View style={{ alignItems: "center" }}>
-              <Ionicons name="ios-qr-scanner" color="orange" size={40} />
-              <Text style={{ fontSize: 12, fontWeight: "300" }}>Scan</Text>
-            </View>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("send")}
+            >
+              <View style={{ alignItems: "center", padding: 5 }}>
+                <Ionicons name="ios-send" color="orange" size={40} />
+                <Text style={{ fontSize: 12, fontWeight: "300" }}>
+                  Send Money
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("scan")}
+            >
+              <View style={{ alignItems: "center", padding: 5 }}>
+                <Ionicons name="ios-qr-scanner" color="orange" size={40} />
+                <Text style={{ fontSize: 12, fontWeight: "300" }}>Scan</Text>
+              </View>
+            </TouchableOpacity>
             <View style={{ alignItems: "center" }}>
               <MaterialIcons name="receipt" color="orange" size={40} />
               <Text style={{ fontSize: 12, fontWeight: "300" }}>
@@ -121,69 +135,57 @@ export default class HomeScreen extends Component {
                   this.props.navigation.navigate("detailComponent", {
                     image: Dress1,
                     price: 25.4,
-                    title: 'Blue Dress'
+                    title: "Blue Dress"
                   })
                 }
               >
                 <View style={styles.imageTextContainer}>
-                  <Image
-                    style={styles.productImage}
-                    source={Dress1}
-                  />
+                  <Image style={styles.productImage} source={Dress1} />
                   <Text>Blue Dress</Text>
                   <Text>$ 25.4</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate("detailComponent",{
+                  this.props.navigation.navigate("detailComponent", {
                     image: Dress2,
                     price: 20.4,
-                    title: 'Red Dress'
+                    title: "Red Dress"
                   })
                 }
               >
                 <View style={styles.imageTextContainer}>
-                  <Image
-                    style={styles.productImage}
-                    source={Dress2}
-                  />
+                  <Image style={styles.productImage} source={Dress2} />
                   <Text>Red Dress</Text>
                   <Text>$ 20.4</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate("detailComponent",{
+                  this.props.navigation.navigate("detailComponent", {
                     image: Blazzer1,
                     price: 125.44,
-                    title: 'Mens Blazzer'
+                    title: "Mens Blazzer"
                   })
                 }
               >
                 <View style={styles.imageTextContainer}>
-                  <Image
-                    style={styles.productImage}
-                    source={Blazzer1}
-                  />
+                  <Image style={styles.productImage} source={Blazzer1} />
                   <Text>Mens casoule Blazzer</Text>
                   <Text>$ 125.44</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() =>
-                  this.props.navigation.navigate("detailComponent",{
+                  this.props.navigation.navigate("detailComponent", {
                     image: Blazzer2,
                     price: 135.94,
-                    title: 'Slim Fit Blazzer'
+                    title: "Slim Fit Blazzer"
                   })
                 }
               >
                 <View style={styles.imageTextContainer}>
-                  <Image
-                    style={styles.productImage}
-                    source={Blazzer2}
-                  />
+                  <Image style={styles.productImage} source={Blazzer2} />
                   <Text>Mens Slim fit Blazzer</Text>
                   <Text>$ 135.94</Text>
                 </View>
