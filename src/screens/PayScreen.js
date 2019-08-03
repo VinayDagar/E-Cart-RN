@@ -26,30 +26,44 @@ export default class PayScreen extends Component {
           }}
         />
         <View style={{ alignItems: "center", padding: 18 }}>
-          <Text> Instance bank to bank transfer </Text>
+          <Text style={{ fontWeight: "bold" }}>
+            {" "}
+            Instance bank to bank transfer{" "}
+          </Text>
         </View>
-        <View>
+        <View style={{ width: 320, height: 120 }}>
           <Image
-            style={{ width: Dimensions.get("window"), height: 200 }}
+            style={{ flex: 1, width: "100%" }}
             source={require("../../assets/sendMoney.jpg")}
           />
         </View>
-        <View style={{ flexDirection: "row", padding: 8, flexWrap: "wrap" }}>
-          <Entypo name="info" color="blue" size={14} />
-          <Text>
-            SMS will besent to erify mobilw=e number. By clicking on Proceed,
-            you agree to{" "}
-          </Text>
-          <Text style={{ color: "blue" }}>Term & Condition</Text>
+        <View style={{ flexDirection: "row", padding: 8, flexWrap: "wrap", marginTop: 10 }}>
+          <View style={{flexDirection: 'row', paddingVertical: 8, flexWrap: "wrap"}} >
+            <Entypo name="info" color="blue" size={10} />
+            <Text style={{fontSize: 10}} >
+              SMS will be sent to verify mobile number. By clicking on, Proceed,
+              you agree to{" "}
+            </Text>
+          <Text style={{ color: "blue", fontSize: 10 }}>Term & Condition</Text>
+          </View>
         </View>
         <TouchableOpacity
-          style={{ borderWidth: 1, borderColor: "orangered", marginTop: 5 }}
+          style={{
+            borderWidth: 1,
+            borderColor: "orangered",
+            marginTop: 5,
+            paddingVertical: 8,
+            alignItems: "center",
+            backgroundColor: "orange",
+            width: 330,
+            alignSelf: 'center'
+          }}
         >
-          <Text style={{ paddingVertical: 8, paddingHorizontal: 35 }}>
+          <Text style={{ paddingVertical: 8, fontWeight: 'bold' }}>
             Proceed
           </Text>
         </TouchableOpacity>
-        <View style={{ alignItems: "center", justifyContent: "center" }}>
+        <View style={{ alignItems: "center", justifyContent: "center", marginTop: 20 }}>
           <Text style={{ color: "#dcdcdc" }}>
             Standard SMS charges may apply.
           </Text>
